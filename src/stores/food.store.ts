@@ -53,7 +53,7 @@ export const useFoodStore = defineStore('food', {
     },
 
     getters: {
-        getTodos(): any {
+        getFoods(): any {
             return this.foods;
         },
     },

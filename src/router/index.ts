@@ -23,7 +23,7 @@ const router = createRouter({
     },
     {
       path: '/food/edit/:id',
-      name: 'create-food',
+      name: 'update-food',
       component: CreateFood
     }
   ]

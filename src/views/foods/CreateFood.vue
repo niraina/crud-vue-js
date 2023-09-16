@@ -18,12 +18,14 @@
     })
     
     const fetchOneFood = async(idCurrent: any) => {
-        await api.get(`/food/${idCurrent}`).then(response => {
-            current.value = response.data.data
-            data.designation = response.data.data.designation
-            data.price = response.data.data.price
-            data.recette = response.data.data.recette
-        })
+        if(id) {
+            await api.get(`/food/${idCurrent}`).then(response => {
+                current.value = response.data.data
+                data.designation = response.data.data.designation
+                data.price = response.data.data.price
+                data.recette = response.data.data.recette
+            })
+        }
     }
 
     const handleSubmit = () => {
@@ -51,7 +53,6 @@
 </script>
 <template>
     <div class="container my-5">
-        {{ current }}
         <form @submit.prevent="handleSubmit">
             <div>
                 <label>Designation</label>
